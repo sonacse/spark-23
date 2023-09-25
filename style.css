@@ -1,0 +1,32 @@
+.screen{
+  
+    background-color: black;
+}
+
+.word-art {
+    font-family: 'Impact', sans-serif;
+    font-size: 48px;
+    color: #f1a80c;
+    text-shadow: 2px 2px 4px rgba(255, 255, 255, 0.5);
+
+}
+
+input[type="checkbox"] {
+    /* Your CSS properties here */
+    width: 20px;
+    height: 20px;
+    float: right;
+    border: none;
+}
+.eventhead
+{
+    color: #f1a80c;
+    font-style: italic;
+    font-weight: bolder;
+}
+.eventheads
+{
+    color: #ffffff;
+    font-style: italic;
+    font-weight: bolder;
+}

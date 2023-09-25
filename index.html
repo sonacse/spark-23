@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SPARKS'23</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+<body class="screen">
+    
+    <div class="container-fluid well  ">
+        <div class="row text-white">
+            <nav class="container navbar navbar-expand-lg d-flex justify-content-center">
+                <div class="row p-2">
+                    <div class="col">
+                        <h3 class="word-art">SPARK'S 23</h3>
+                    </div>
+                    
+                </div>
+                <div class="row p-2">
+                  <div class="col">
+                      <center><h3>DEPARTMENT OF COMPUTER SCIENCE & ENGINEERING</h3></center>
+                  </div>
+                  
+              </div>
+            </nav>
+        </div>
+        <div class="container text-white">
+          <div class="d-flex justify-content-center" ><h2 class="word-art">Registration Form</h2></div>
+          
+            <form class="border border-light m-lg-3 p-lg-5 p-3">
+              <div style="display: none;">
+                <h5 class="eventhead">Student Details</h5>
+                <div class="form-row">
+                  <div class="form-group col-md-6">
+                    <label for="inputEmail4">Name</label>
+                    <input type="text" class="form-control" id="inputEmail4" placeholder="Enter your Name">
+                  </div>
+                  <div class="form-group col-md-6">
+                    <label for="inputPassword4">Register Number</label>
+                    <input type="text" class="form-control" id="inputPassword4" placeholder="Enter your Register Number">
+                  </div>
+                </div>
+                <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputEmail4">Mobile number</label>
+                      <input type="number" class="form-control" id="inputEmail4" placeholder="Enter your mobile number">
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputPassword4">Email id</label>
+                      <input type="mail" class="form-control" id="inputPassword4" placeholder="Enter your Email id">
+                    </div>
+                  </div>
+                  <div class="form-row">
+                    <div class="form-group col-md-6">
+                      <label for="inputEmail4">Department name</label>
+                      <select id="inputState" class="form-control">
+                        <option selected>Choose...</option>
+                        <option value="cse">Computer Science and Engineering</option>
+                        <option value="cseai&ml">CSE(Artificial Intelligence and Machine Learning)</option>
+                        <option value="csd">Computer Science and Design</option>
+                        <option value="it">Information Technology</option>
+                        <option value="ads">Artificial Intelligence and Data Science</option>
+                        <option value="mech">Mechanical Engineering</option>
+                        <option value="mechatronics">Mechatronics Engineering</option>
+                        <option value="eee">Electrical and Electronics Engineering</option>
+                        <option value="ece">Electronics and Communication Engineering</option>
+                        <option value="civil">Civil Engineering</option>
+                        <option value="ft">Fashion Techology</option>
+                        <option value="bio">B.E. - Bio Medical Engineering</option>
+                      </select>
+                    </div>
+                    <div class="form-group col-md-6">
+                      <label for="inputPassword4">Year</label>
+                      <select id="inputState" class="form-control">
+                        <option selected>Choose...</option>
+                        <option value="1">1<sup>st</sup> year</option>
+                        <option value="2">2<sup>nd</sup> year</option>
+                        <option value="3">3<sup>rd</sup> year</option>
+                        <option value="4">4<sup>th</sup> year</option>
+                    </select>
+                    </div>
+                  </div>
+               
+                <!-- <div class="form-group">
+                  <div class="form-check">
+                    <input class="form-check-input" type="checkbox" id="gridCheck">
+                    <label class="form-check-label" for="gridCheck">
+                      Check me out
+                    </label>
+                  </div>
+                </div>  -->
+                <div class="d-flex justify-content-center p-2">
+                  <button type="submit" class="btn btn-primary col-lg-8">Next</button>
+                </div>
+              </div>
+              <div style="display: none;">
+                <h5 class="eventhead">CSE Department Event</h5>
+                <div class="row mx-auto d-flex justify-content-center">
+                  <div class="col-lg-5 m-2">
+                    <div class="list-group d-flex justify-content-around">
+                      <h5 class="list-group-item   eventheads" style="background-color: #f1a80c;">Technical Event <input type="checkbox"   id=""></h5>
+                      <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
+                      <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
+                      <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
+                      <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros</button>
+                    </div>
+                  </div>
+                  <div class="col-lg-5 m-2">
+                    <div class="list-group d-flex justify-content-around">
+                      <h5 class="list-group-item  eventheads" style="background-color: #f1a80c;">Non-Technical Event <input type="checkbox"   id=""></h5>
+                      <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
+                      <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
+                      <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
+                      <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros</button>
+                    </div>
+                  </div>
+                </div>
+                <h5 class="eventhead">CSE Club Event</h5>
+                <div class="row mx-auto d-flex justify-content-center">
+                  <div class="col-lg-10 m-2">
+                    <div class="list-group d-flex justify-content-around">
+                      <h5 class="list-group-item   eventheads" style="background-color: #f1a80c;">Club Event <input type="checkbox"   id=""></h5>
+                      <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
+                      <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
+                    </div>
+                  </div>
+                  
+                <div class="d-flex justify-content-center p-2 col-10">
+                  <button type="submit" class="btn btn-primary col-lg-8">Submit my Response</button>
+                </div>
+        
+              </div>
+               
+               </div> 
+               <div style="display: block;">
+                <h5 class="eventhead">CSE Department Event</h5>
+                <div class="row mx-auto d-flex justify-content-center">
+                  <div class="col-lg-12"> <h5>Technical Event</h5></div>  
+                  <div class="col-lg-5 m-2">
+                    <div class="list-group d-flex justify-content-around">
+                      <select id="inputState" class="form-control">
+                        <option selected>Select Technical Event</option>
+                        <option value="1">event 1</option>
+                        <option value="2">event 2</option>
+                        <option value="3">event 3</option>
+                        <option value="4">event 4</option>
+                        <option value="5">event 5</option>
+                        
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-5 m-2">
+                    <div class="list-group d-flex justify-content-around">
+                      <select id="inputState" class="form-control">
+                        <option selected>Select Technical Event</option>
+                        <option value="1">event 1</option>
+                        <option value="2">event 2</option>
+                        <option value="3">event 3</option>
+                        <option value="4">event 4</option>
+                        <option value="5">event 5</option>
+                        
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <div class="row mx-auto d-flex justify-content-center">
+                  <div class="col-lg-12"> <h5>Non-Technical Event</h5></div>  
+                  <div class="col-lg-5 m-2">
+                    <div class="list-group d-flex justify-content-around">
+                      <select id="inputState" class="form-control">
+                        <option selected>Select Non-Technical Event</option>
+                        <option value="1">event 1</option>
+                        <option value="2">event 2</option>
+                        <option value="3">event 3</option>
+                        <option value="4">event 4</option>
+                        <option value="5">event 5</option>
+                        
+                      </select>
+                    </div>
+                  </div>
+                  <div class="col-lg-5 m-2">
+                    <div class="list-group d-flex justify-content-around">
+                      <select id="inputState" class="form-control">
+                        <option selected>Select Non-Technical Event</option>
+                        <option value="1">event 1</option>
+                        <option value="2">event 2</option>
+                        <option value="3">event 3</option>
+                        <option value="4">event 4</option>
+                        <option value="5">event 5</option>
+                        
+                      </select>
+                    </div>
+                  </div>
+                </div>
+                <h5 class="eventhead">CSE Club Event</h5>
+                <div class="row mx-auto d-flex justify-content-center">
+                  <div class="col-lg-10 m-2">
+                    <div class="list-group d-flex justify-content-around">
+                      <h5 class="list-group-item  eventheads " style="background-color: #f1a80c;">Club Event <input type="checkbox"   id=""></h5>
+                      <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
+                      <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
+                    </div>
+                  </div>
+                  
+                <div class="d-flex justify-content-center mt-lg-2 col-10">
+                  <button type="submit" class="btn btn-primary col-lg-8">Submit my Response</button>
+                </div>
+        
+              </div>
+               
+               </div> 
+              </form>
+        </div>
+       
+    </div>
+
+    <script src="app.js"></script>
+</body>
+</html>
