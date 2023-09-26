@@ -1,6 +1,27 @@
-.screen{
-  
+
+body {
+    margin: 0;
+    overflow: hidden;
     background-color: black;
+    
+    
+}
+.sbar
+{
+    max-height: 500px;
+    overflow-y: scroll;
+    overflow-x: hidden;
+}
+
+
+canvas {
+    display: block;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: -1;
+    
+
 }
 
 .word-art {
@@ -29,4 +50,16 @@ input[type="checkbox"] {
     color: #ffffff;
     font-style: italic;
     font-weight: bolder;
+}
+
+@media (max-width: 480px) {
+    .word-art {
+       
+        font-size: 28px;
+       
+    }
+    .cse
+    {
+        font-size: 20px;
+    }
 }
