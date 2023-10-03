@@ -63,7 +63,7 @@ document.getElementById('nextbtn').addEventListener('click', async (event) => {
             if (element.name === "regno") {
                 const snapshot = await registerdata.child(element.value).get();
                 if (snapshot.exists()) {
-                    swal("Error", "The register no is already taken.", "error");
+                    swal("Error", "The register number is already taken.", "error");
                     check = 1;
                 } else {
                     data[element.name] = element.value;
