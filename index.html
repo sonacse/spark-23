@@ -3,13 +3,20 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>SPARKS'23</title>
+    <title>SPARK'23</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
 
     <script src="https://unpkg.com/sweetalert/dist/sweetalert.min.js"></script>
+
+    <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-auth.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-firestore.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-database.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-storage.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/8.9.0/firebase-analytics.js"></script>
 
     <link rel="stylesheet" href="style.css">
 </head>
@@ -36,7 +43,7 @@
           <div class="d-flex justify-content-center" ><h2 class="word-art">Registration Form</h2></div>
           <br><br>
             <form class=" sbar">
-              <div style="display: block;" id="dataform1" >
+              <div style="display: none;" id="dataform1" >
                 <h5 class="eventhead">Student Details</h5>
                 <div class="form-row">
                   <div class="form-group col-md-6">
@@ -66,15 +73,15 @@
                         <option value="cse">Computer Science and Engineering</option>
                         <option value="cse-ai&ml">CSE(Artificial Intelligence and Machine Learning)</option>
                         <option value="cse-csd">Computer Science and Design</option>
-                        <option value="it">Information Technology</option>
-                        <option value="ads">Artificial Intelligence and Data Science</option>
-                        <option value="mech">Mechanical Engineering</option>
-                        <option value="mechatronics">Mechatronics Engineering</option>
-                        <option value="eee">Electrical and Electronics Engineering</option>
-                        <option value="ece">Electronics and Communication Engineering</option>
-                        <option value="civil">Civil Engineering</option>
-                        <option value="ft">Fashion Techology</option>
-                        <option value="bio">B.E. - Bio Medical Engineering</option>
+                        <option value="Information Technology">Information Technology</option>
+                        <option value="Artificial Intelligence and Data Science">Artificial Intelligence and Data Science</option>
+                        <option value="Mechanical Engineering">Mechanical Engineering</option>
+                        <option value="Mechatronics Engineering">Mechatronics Engineering</option>
+                        <option value="Electrical and Electronics Engineering">Electrical and Electronics Engineering</option>
+                        <option value="Electronics and Communication Engineering">Electronics and Communication Engineering</option>
+                        <option value="Civil Engineering">Civil Engineering</option>
+                        <option value="Fashion Techology">Fashion Techology</option>
+                        <option value="B.E. - Bio Medical Engineering">B.E. - Bio Medical Engineering</option>
                       </select>
                     </div>
                     <div class="form-group col-md-6">
@@ -94,34 +101,47 @@
                 </div>
               </div>
               <div style="display: none;" id="dataform2">
-                <h5 class="eventhead">CSE Department Event</h5>
                 <div class="row mx-auto d-flex justify-content-center">
                   <div class="col-lg-5 m-2">
                     <div class="list-group d-flex justify-content-around">
-                      <h5 class="list-group-item   eventheads" style="background-color: #f1a80c;">Technical Event <input type="checkbox"   id="tevent" name="tech"></h5>
-                      <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
-                      <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-                      <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
-                      <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros</button>
+                      <h5 class="list-group-item   eventheads" style="background-color: #f1a80c;">Technical Event</h5>
+                      <button type="button" class="list-group-item list-group-item-action">Paper Presentation</button>
+                      <button type="button" class="list-group-item list-group-item-action">Codigo</button>
+                      <button type="button" class="list-group-item list-group-item-action">Code Debugging</button>
+                      <button type="button" class="list-group-item list-group-item-action" disabled>Flipping Frenzy</button>
+                      <button type="button" class="list-group-item list-group-item-action" disabled>Capture the Flag</button>
+
                     </div>
                   </div>
                   <div class="col-lg-5 m-2">
                     <div class="list-group d-flex justify-content-around">
-                      <h5 class="list-group-item  eventheads" style="background-color: #f1a80c;">Non-Technical Event <input type="checkbox"   id="ntevent" name="ntech"></h5>
-                      <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
-                      <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-                      <button type="button" class="list-group-item list-group-item-action">Porta ac consectetur ac</button>
-                      <button type="button" class="list-group-item list-group-item-action" disabled>Vestibulum at eros</button>
+                      <h5 class="list-group-item  eventheads" style="background-color: #f1a80c;">Non-Technical Event </h5>
+                      <button type="button" class="list-group-item list-group-item-action">Bondblitz</button>
+                      <button type="button" class="list-group-item list-group-item-action">Treasure Hunt</button>
+                      <button type="button" class="list-group-item list-group-item-action">Quiz Holic</button>
+                      <button type="button" class="list-group-item list-group-item-action" disabled>Quote The Picture</button>
+                      <button type="button" class="list-group-item list-group-item-action" disabled>Shutter Shot</button>
+
                     </div>
                   </div>
                 </div>
-                <h5 class="eventhead">CSE Club Event</h5>
                 <div class="row mx-auto d-flex justify-content-center">
                   <div class="col-lg-10 m-2">
                     <div class="list-group d-flex justify-content-around">
-                      <h5 class="list-group-item   eventheads" style="background-color: #f1a80c;">Club Event <input type="checkbox"   id="cevent" name="club"></h5>
-                      <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
-                      <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
+                      <h5 class="list-group-item   eventheads" style="background-color: #f1a80c;">DEXTER'S CLUB Events</h5>
+                      <button type="button" class="list-group-item list-group-item-action">Technical Event ~ Code Buzz</button>
+                      <button type="button" class="list-group-item list-group-item-action">Non-Technical Event ~ Back-Back</button>
+                    </div>
+                  </div>
+                  <div class="col-lg-10 m-2">
+                    <div class="list-group d-flex justify-content-around">
+                      <table>
+                        <tr>
+                          <th><input type="checkbox" name="Event" id="otherreg"></th>
+                          <th>                      
+                            <a href="#" style="color: #f1a80c;text-decoration: none;cursor: default;">Please ( ✓ ) to register your response. All the Events You can Particapater with in the Amount of RS: 100 /-</a>
+                        </th></tr>
+                      </table>
                     </div>
                   </div>
                   
@@ -132,76 +152,36 @@
               </div>
                
                </div> 
-               <div style="display: none;" id="dataform3">
-                <h5 class="eventhead">CSE Department Event</h5>
+               <div style="display: block;" id="dataform3">
                 <div class="row mx-auto d-flex justify-content-center">
-                  <div class="col-lg-12"> <h5>Technical Event</h5></div>  
                   <div class="col-lg-5 m-2">
                     <div class="list-group d-flex justify-content-around">
-                      <select id="inputState" class="form-control form2" name="tech1">
-                        <option selected value="">Select Technical Event</option>
-                        <option value="1">event 1</option>
-                        <option value="2">event 2</option>
-                        <option value="3">event 3</option>
-                        <option value="4">event 4</option>
-                        <option value="5">event 5</option>
-                        
-                      </select>
+                      <h5 class="list-group-item   eventheads" style="background-color: #f1a80c;">Technical Event</h5>
+                      <button type="button" class="list-group-item list-group-item-action op" >Paper Presentation <input type="checkbox" name="Paper Presentation" class="getcsestudentevent1 gen"></button>
+                      <button type="button" class="list-group-item list-group-item-action op" >Codigo<input type="checkbox" name="Codigo" class="getcsestudentevent1 gen"></button>
+                      <button type="button" class="list-group-item list-group-item-action op" >Code Debugging<input type="checkbox" name="Code Debugging" class="getcsestudentevent1 gen"></button>
+                      <button type="button" class="list-group-item list-group-item-action op" >Flipping Frenzy<input type="checkbox" name="Flipping Frenzy" class="getcsestudentevent1 gen"></button>
+                      <button type="button" class="list-group-item list-group-item-action op" >Capture the Flag<input type="checkbox" name="Capture the Flag" class="getcsestudentevent1 gen"></button>
+                      <button type="button" class="list-group-item list-group-item-action op" >Code Buzz<input type="checkbox" name="Code Buzz" class="getcsestudentevent1 gen"></button>
                     </div>
                   </div>
                   <div class="col-lg-5 m-2">
                     <div class="list-group d-flex justify-content-around">
-                      <select id="inputState" class="form-control form2"  name="tech2">
-                        <option selected value="">Select Technical Event</option>
-                        <option value="1">event 1</option>
-                        <option value="2">event 2</option>
-                        <option value="3">event 3</option>
-                        <option value="4">event 4</option>
-                        <option value="5">event 5</option>
-                        
-                      </select>
+                      <h5 class="list-group-item  eventheads" style="background-color: #f1a80c;">Non-Technical Event </h5>
+                      <button type="button" class="list-group-item list-group-item-action op" >Bondblitz<input type="checkbox" name="Bondblitz" class="getcsestudentevent2 gen"></button>
+                      <button type="button" class="list-group-item list-group-item-action op" >Treasure Hunt<input type="checkbox" name="Treasure Hunt" class="getcsestudentevent2 gen"></button>
+                      <button type="button" class="list-group-item list-group-item-action op" >Quiz Holic<input type="checkbox" name="Quiz Holic" class="getcsestudentevent2 gen"></button>
+                      <button type="button" class="list-group-item list-group-item-action op" >Quote The Picture<input type="checkbox" name="Quote The Picture" class="getcsestudentevent2 gen"></button>
+                      <button type="button" class="list-group-item list-group-item-action op" >Shutter Shot<input type="checkbox" name="Shutter Shot" class="getcsestudentevent2 gen"></button>
+                      <button type="button" class="list-group-item list-group-item-action op" >Back - Back<input type="checkbox" name="Back - Back" class="getcsestudentevent2 gen"></button>
                     </div>
                   </div>
                 </div>
+               
+                
+                
                 <div class="row mx-auto d-flex justify-content-center">
-                  <div class="col-lg-12"> <h5>Non-Technical Event</h5></div>  
-                  <div class="col-lg-5 m-2">
-                    <div class="list-group d-flex justify-content-around">
-                      <select id="inputState" class="form-control form2" name="nontech1">
-                        <option selected value="">Select Non-Technical Event</option>
-                        <option value="1">event 1</option>
-                        <option value="2">event 2</option>
-                        <option value="3">event 3</option>
-                        <option value="4">event 4</option>
-                        <option value="5">event 5</option>
-                        
-                      </select>
-                    </div>
-                  </div>
-                  <div class="col-lg-5 m-2">
-                    <div class="list-group d-flex justify-content-around">
-                      <select id="inputState" class="form-control form2" name="nontech2">
-                        <option selected value="">Select Non-Technical Event</option>
-                        <option value="1">event 1</option>
-                        <option value="2">event 2</option>
-                        <option value="3">event 3</option>
-                        <option value="4">event 4</option>
-                        <option value="5">event 5</option>
-                        
-                      </select>
-                    </div>
-                  </div>
-                </div>
-                <h5 class="eventhead">CSE Club Event</h5>
-                <div class="row mx-auto d-flex justify-content-center">
-                  <div class="col-lg-10 m-2">
-                    <div class="list-group d-flex justify-content-around">
-                      <h5 class="list-group-item  eventheads " style="background-color: #f1a80c;">Club Event <input type="checkbox"   id="cseclubevent" name="club"></h5>
-                      <button type="button" class="list-group-item list-group-item-action">Dapibus ac facilisis in</button>
-                      <button type="button" class="list-group-item list-group-item-action">Morbi leo risus</button>
-                    </div>
-                  </div>
-                  
+                 <center> <a href="#" style="color: #ffffff;text-decoration: none;cursor: default;">Note: All the CSE department Student must want to Register on 2 Technical & 2 Non-Technical Event.</a></center><br>
                 <div class="d-flex justify-content-center mt-lg-2 col-10">
                   <button type="submit" class="btn btn-primary col-lg-8" id="csestudentevent">Submit my Response</button>
                 </div>
